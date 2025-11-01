@@ -1,0 +1,26 @@
+{
+"name": "bankstatement",
+"build": { "dockerfile": "Dockerfile" },
+"features": {
+"ghcr.io/devcontainers/features/python:1": { "version": "3.11" }
+},
+"postCreateCommand": "pip install -r requirements.txt",
+"forwardPorts": [8000],
+"portsAttributes": { "8000": { "label": "FastAPI", "onAutoForward": "openBrowser" } },
+"remoteEnv": { "PYTHONUNBUFFERED": "1", "PYTHONDONTWRITEBYTECODE": "1" },
+"customizations": {
+    "vscode": {
+        "extensions": [
+            "ms-python.python",
+            "ms-python.vscode-pylance",
+            "charliermarsh.ruff"
+        ],
+        "settings": {
+            "python.defaultInterpreterPath": "/usr/local/python/current/bin/python",
+            "python.testing.pytestEnabled": true,
+            "python.testing.pytestArgs": ["tests"],
+            "ruff.organizeImports": true
+            }
+        }
+    }
+}
