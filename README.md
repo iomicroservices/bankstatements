@@ -18,3 +18,8 @@ In this step we add:
 - A **/parse** endpoint that accepts a PDF upload, stores it under `.data/`, and returns a stub summary.
 
 Next step we’ll implement real extraction.
+
+We now implement **real extraction for text-based PDFs** using `pdfplumber` first and `camelot` as a fallback, then write CSV/XLSX.
+
+
+OCR for scanned PDFs will come in Step 4.
